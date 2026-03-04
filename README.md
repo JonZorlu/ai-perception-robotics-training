@@ -6,7 +6,7 @@ A first-person interactive kitchen scene built in **Godot 4.6.1** demonstrating 
 
 ## Demo
 
-> *Walk-through Loom video link coming soon..*
+> 📹 [Watch the walkthrough (Loom)](https://www.loom.com/share/8a2dbcec4dfb471e905dd9160725554d)
 
 Controls:
 | Input | Action |
