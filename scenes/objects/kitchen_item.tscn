@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d317qy8xi7aa3"]
+
+[ext_resource type="Script" uid="uid://bw6iaf0ujdx3o" path="res://scripts/grabbable_object.gd" id="1_ipxm1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ipxm1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ryk3l"]
+
+[node name="KitchenItem" type="RigidBody3D" unique_id=1425573016]
+script = ExtResource("1_ipxm1")
+
+[node name="ItemMesh" type="MeshInstance3D" parent="." unique_id=1304830613]
+mesh = SubResource("CylinderMesh_ipxm1")
+
+[node name="ItemCollision" type="CollisionShape3D" parent="." unique_id=1852107668]
+shape = SubResource("CylinderShape3D_ryk3l")

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b3t2rqyl6k5jl"]
+
+[ext_resource type="Script" uid="uid://dhukq7ubdgyl4" path="res://scripts/door_interactable.gd" id="1_fvi26"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvi26"]
+albedo_color = Color(0.76737565, 0.64995646, 0.50638646, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vkw84"]
+material = SubResource("StandardMaterial3D_fvi26")
+size = Vector3(0.6, 0.85, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fvi26"]
+size = Vector3(0.6, 0.85, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkw84"]
+albedo_color = Color(0.7977378, 0.6799758, 0.5370987, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_06u25"]
+material = SubResource("StandardMaterial3D_vkw84")
+size = Vector3(0.55, 0.75, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vkw84"]
+size = Vector3(0.55, 0.75, 0.04)
+
+[node name="CabinetDoor" type="Node3D" unique_id=833369111]
+script = ExtResource("1_fvi26")
+open_angle_degrees = -105.0
+
+[node name="CabinetFrame" type="StaticBody3D" parent="." unique_id=1389696695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425, 0)
+collision_layer = 2
+collision_mask = 5
+
+[node name="FrameMesh" type="MeshInstance3D" parent="CabinetFrame" unique_id=737773505]
+mesh = SubResource("BoxMesh_vkw84")
+
+[node name="FrameCollision" type="CollisionShape3D" parent="CabinetFrame" unique_id=2104641779]
+shape = SubResource("BoxShape3D_fvi26")
+
+[node name="DoorHinge" type="Node3D" parent="." unique_id=815777675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0.425, 0.255)
+
+[node name="DoorBody" type="AnimatableBody3D" parent="DoorHinge" unique_id=71313414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275, 0, 0)
+collision_layer = 2
+collision_mask = 5
+
+[node name="DoorMesh" type="MeshInstance3D" parent="DoorHinge/DoorBody" unique_id=46430024]
+mesh = SubResource("BoxMesh_06u25")
+
+[node name="DoorCollision" type="CollisionShape3D" parent="DoorHinge/DoorBody" unique_id=1469727468]
+shape = SubResource("BoxShape3D_vkw84")

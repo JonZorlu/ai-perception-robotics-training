@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://t067mhct18wt"]
+
+[ext_resource type="Script" uid="uid://t3gsg7j0u1pp" path="res://scripts/switch_interactable.gd" id="1_ln0py"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ln0py"]
+albedo_color = Color(0.48452926, 0.48452926, 0.50638646, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ln0py"]
+material = SubResource("StandardMaterial3D_ln0py")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.03
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ln0py"]
+height = 0.03
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhhrg"]
+albedo_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bhhrg"]
+material = SubResource("StandardMaterial3D_bhhrg")
+top_radius = 0.022
+bottom_radius = 0.022
+height = 0.03
+
+[node name="StoveSwitch" type="Node3D" unique_id=401467501]
+script = ExtResource("1_ln0py")
+
+[node name="SwitchBase" type="StaticBody3D" parent="." unique_id=437320832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+collision_layer = 2
+collision_mask = 5
+
+[node name="BaseMesh" type="MeshInstance3D" parent="SwitchBase" unique_id=2041279110]
+mesh = SubResource("CylinderMesh_ln0py")
+
+[node name="BaseCollision" type="CollisionShape3D" parent="SwitchBase" unique_id=1313266654]
+shape = SubResource("CylinderShape3D_ln0py")
+
+[node name="SwitchKnob" type="MeshInstance3D" parent="." unique_id=833898790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+mesh = SubResource("CylinderMesh_bhhrg")
+
+[node name="BurnerLight" type="OmniLight3D" parent="." unique_id=1821079465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+visible = false
+light_color = Color(1, 0.7014107, 0.24780053, 1)
+light_energy = 4.0
+omni_range = 1.0
