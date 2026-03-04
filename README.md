@@ -15,7 +15,7 @@ Controls:
 | `Mouse` | Look |
 | `E` | Interact (drawer, cabinet, switch) |
 | `LMB` | Grab / Drop physics objects |
-| `ESC` | Release mouse cursor |
+| `` ` `` | Release mouse cursor |
 
 ---
 
